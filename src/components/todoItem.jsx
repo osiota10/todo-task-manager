@@ -1,6 +1,6 @@
 const TodoItem = () => {
     return (
-        <section className="bg-light rounded mb-2 py-2 px-3">
+        <section className="bg-light rounded mb-2 py-3 px-3">
             <div class="form-check">
                 <input
                     class="form-check-input"
