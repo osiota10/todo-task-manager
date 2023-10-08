@@ -71,6 +71,7 @@ function App() {
   return (
     <div className="min-vh-100 py-5 gradient-custom">
       <section className="container bg-white p-5 rounded">
+        <h1 className="text-center mb-4">TodoMaster</h1>
         <form
           className="d-flex justify-content-center align-items-center mb-5"
           onSubmit={handleAddTodo} // Handle form submission
