@@ -1,15 +1,15 @@
-const TodoItem = () => {
+const TodoItem = ({ id, task, is_completed }) => {
     return (
-        <section className="bg-light rounded mb-2 py-3 px-3">
+        <section className="bg-light rounded mb-2 py-3 px-3" key={id}>
             <div class="form-check">
                 <input
                     class="form-check-input"
                     type="checkbox"
-                    value=""
+                    defaultChecked={is_completed}
                     id="flexCheckDefault"
                 />
                 <label class="form-check-label" for="flexCheckDefault">
-                    Default checkbox
+                    {task}
                 </label>
             </div>
         </section>

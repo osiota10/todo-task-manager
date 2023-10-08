@@ -1,6 +1,15 @@
 import TodoItem from "./components/todoItem";
+import { useState } from "react";
 
 function App() {
+  const [todo, setTodo] = useState([
+    { id: "1", task: "Banner Printing", is_completed: true, },
+    { id: "2", task: "Calling Emeka", is_completed: false, },
+    { id: "3", task: "Road Walk", is_completed: true, },
+    { id: "4", task: "Shopping some items", is_completed: false, },
+    { id: "5", task: "Going to the orphanage", is_completed: false, }
+  ])
+
   return (
     <div className="min-vh-100 py-5 gradient-custom">
       <section className="container bg-white p-5 rounded">
@@ -24,12 +33,13 @@ function App() {
         </ul>
 
         <section className="row row-cols-1 row-cols-lg-1 g-6">
-          <TodoItem />
-          <TodoItem />
-          <TodoItem />
-          <TodoItem />
-          <TodoItem />
-          <TodoItem />
+          {todo.map((item) => (
+            <TodoItem
+              id={item.id}
+              task={item.task}
+              is_completed={item.is_completed}
+            />
+          ))}
         </section>
       </section>
     </div>
