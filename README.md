@@ -24,7 +24,7 @@ This is a simple web application built with React for managing tasks. It allows 
 
 ## Demo
 
-You can access a live demo of the Todo Task Manager App here: [Todo Task Manager Demo](https://your-demo-link.com)
+You can access a live demo of the Todo Task Manager App here: [Todo Task Manager Demo](https://osiota10.github.io/todo-task-manager/)
 
 ## Getting Started
 
@@ -39,13 +39,13 @@ Before you begin, ensure you have met the following requirements:
 1. Clone the repository:
 
    ```
-   git clone https://github.com/your-username/task-manager-app.git
+   git clone https://github.com/osiota10/todo-task-manager.git
    ```
 
 2. Navigate to the project directory:
 
    ```
-   cd task-manager-app
+   cd todo-task-manager
    ```
 
 3. Install dependencies:
