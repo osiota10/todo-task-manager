@@ -120,15 +120,20 @@ function App() {
         </ul>
 
         <section className="row row-cols-1 row-cols-lg-1 g-6">
-          {filteredTodos.map((item) => (
-            <TodoItem
-              id={item.id}
-              task={item.task}
-              is_completed={item.is_completed}
-              onToggleCompletion={toggleTodoCompletion}
-              onDelete={handleDeleteTodo}
-            />
-          ))}
+          {filteredTodos.length === 0 ? (
+            <h2 className="text-center">No todos to display.</h2>
+          ) : (
+            filteredTodos.map((item) => (
+              <TodoItem
+                key={item.id}
+                id={item.id}
+                task={item.task}
+                is_completed={item.is_completed}
+                onToggleCompletion={toggleTodoCompletion}
+                onDelete={handleDeleteTodo}
+              />
+            ))
+          )}
         </section>
       </section>
     </div>
