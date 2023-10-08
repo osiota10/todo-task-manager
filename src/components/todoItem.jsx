@@ -8,7 +8,12 @@ const TodoItem = ({ id, task, is_completed }) => {
                     defaultChecked={is_completed}
                     id="flexCheckDefault"
                 />
-                <label class="form-check-label" for="flexCheckDefault">
+                <label
+                    class={`form-check-label ${
+                        is_completed ? "text-decoration-line-through" : null
+                    }`}
+                    for="flexCheckDefault"
+                >
                     {task}
                 </label>
             </div>
