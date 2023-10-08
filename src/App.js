@@ -3,11 +3,9 @@ import { useState } from "react";
 
 function App() {
   const [todo, setTodo] = useState([
-    { id: "1", task: "Banner Printing", is_completed: true, },
-    { id: "2", task: "Calling Emeka", is_completed: false, },
-    { id: "3", task: "Road Walk", is_completed: true, },
-    { id: "4", task: "Shopping some items", is_completed: false, },
-    { id: "5", task: "Going to the orphanage", is_completed: false, }
+    { id: "1", task: "Buy groceries", is_completed: true, },
+    { id: "2", task: "Clean the house", is_completed: false, },
+    { id: "3", task: "Go for a walk", is_completed: true, },
   ])
 
   // Function to toggle the completion status of a todo item
