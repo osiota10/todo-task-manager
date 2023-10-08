@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/todo-task-manager/static/css/main.cedc1155.css",
+    "main.js": "/todo-task-manager/static/js/main.96be0d13.js",
+    "static/js/787.099f6ba8.chunk.js": "/todo-task-manager/static/js/787.099f6ba8.chunk.js",
+    "index.html": "/todo-task-manager/index.html",
+    "main.cedc1155.css.map": "/todo-task-manager/static/css/main.cedc1155.css.map",
+    "main.96be0d13.js.map": "/todo-task-manager/static/js/main.96be0d13.js.map",
+    "787.099f6ba8.chunk.js.map": "/todo-task-manager/static/js/787.099f6ba8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cedc1155.css",
+    "static/js/main.96be0d13.js"
+  ]
+}
