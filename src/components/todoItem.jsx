@@ -15,6 +15,13 @@ const TodoItem = ({ id, task, is_completed }) => {
                     for="flexCheckDefault"
                 >
                     {task}
+                    <span
+                        className={`ms-3 badge text-bg-${
+                            is_completed ? "primary" : "secondary"
+                        }`}
+                    >
+                        {is_completed ? "Completed" : "Pending"}
+                    </span>
                 </label>
             </div>
         </section>
