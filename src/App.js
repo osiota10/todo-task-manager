@@ -24,6 +24,24 @@ function App() {
     setTodo(updatedTodo);
   };
 
+  const [filter, setFilter] = useState('All'); // State to track the active filter
+
+  // Function to handle filter change
+  const handleFilterChange = (newFilter) => {
+    setFilter(newFilter);
+  };
+
+  // Function to filter todos based on the active filter
+  const filteredTodos = todo.filter((item) => {
+    if (filter === 'All') {
+      return true;
+    } else if (filter === 'Active') {
+      return !item.is_completed;
+    } else {
+      return item.is_completed;
+    }
+  });
+
   return (
     <div className="min-vh-100 py-5 gradient-custom">
       <section className="container bg-white p-5 rounded">
@@ -34,20 +52,35 @@ function App() {
           <button type="submit" class="btn btn-info ms-2">Add</button>
         </form>
 
-        <ul class="nav nav-pills mb-4">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">All</a>
+        <ul className="nav nav-pills mb-4">
+          <li className="nav-item">
+            <button
+              className={`nav-link ${filter === 'All' ? 'active' : ''}`}
+              onClick={() => handleFilterChange('All')}
+            >
+              All
+            </button>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Active</a>
+          <li className="nav-item">
+            <button
+              className={`nav-link ${filter === 'Active' ? 'active' : ''}`}
+              onClick={() => handleFilterChange('Active')}
+            >
+              Pending
+            </button>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Completed</a>
+          <li className="nav-item">
+            <button
+              className={`nav-link ${filter === 'Completed' ? 'active' : ''}`}
+              onClick={() => handleFilterChange('Completed')}
+            >
+              Completed
+            </button>
           </li>
         </ul>
 
         <section className="row row-cols-1 row-cols-lg-1 g-6">
-          {todo.map((item) => (
+          {filteredTodos.map((item) => (
             <TodoItem
               id={item.id}
               task={item.task}
