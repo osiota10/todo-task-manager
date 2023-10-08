@@ -36,7 +36,9 @@ const TodoItem = ({ id, task, is_completed, onToggleCompletion, onDelete }) => {
                     </label>
                 </section>
 
-                <span onClick={handleTodoDelete}>Delete</span>
+                <span onClick={handleTodoDelete}>
+                    <i class="fa-solid fa-trash-can fs-4 text-danger"></i>
+                </span>
             </div>
         </section>
     );
