@@ -24,6 +24,12 @@ function App() {
     setTodo(updatedTodo);
   };
 
+  const handleDeleteTodo = (id) => {
+    // Filter out the todo item with the matching id to delete it
+    const updatedTodo = todo.filter((item) => item.id !== id);
+    setTodo(updatedTodo); // Update the todo state
+  };
+
   const [filter, setFilter] = useState('All'); // State to track the active filter
   const [newTodo, setNewTodo] = useState('');
 
@@ -120,6 +126,7 @@ function App() {
               task={item.task}
               is_completed={item.is_completed}
               onToggleCompletion={toggleTodoCompletion}
+              onDelete={handleDeleteTodo}
             />
           ))}
         </section>
