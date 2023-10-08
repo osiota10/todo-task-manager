@@ -10,6 +10,20 @@ function App() {
     { id: "5", task: "Going to the orphanage", is_completed: false, }
   ])
 
+  // Function to toggle the completion status of a todo item
+  const toggleTodoCompletion = (id) => {
+    // Create a copy of the todo array with the updated item
+    const updatedTodo = todo.map((item) => {
+      if (item.id === id) {
+        return { ...item, is_completed: !item.is_completed };
+      }
+      return item;
+    });
+
+    // Update the state with the new todo array
+    setTodo(updatedTodo);
+  };
+
   return (
     <div className="min-vh-100 py-5 gradient-custom">
       <section className="container bg-white p-5 rounded">
@@ -38,6 +52,7 @@ function App() {
               id={item.id}
               task={item.task}
               is_completed={item.is_completed}
+              onToggleCompletion={toggleTodoCompletion}
             />
           ))}
         </section>

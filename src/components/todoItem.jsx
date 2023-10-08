@@ -1,10 +1,8 @@
 import { useState } from "react";
 
-const TodoItem = ({ id, task, is_completed }) => {
-    const [completed, setCompleted] = useState(is_completed);
-
+const TodoItem = ({ id, task, is_completed, onToggleCompletion }) => {
     const handleCheckboxClick = () => {
-        setCompleted(!completed); // Toggle the completed state
+        onToggleCompletion(id); // Toggle the completed state
     };
     return (
         <section className="bg-light rounded mb-2 py-3 px-3" key={id}>
@@ -12,7 +10,7 @@ const TodoItem = ({ id, task, is_completed }) => {
                 <input
                     class="form-check-input"
                     type="checkbox"
-                    checked={completed}
+                    defaultChecked={is_completed}
                     onChange={handleCheckboxClick} // Use onChange instead of onClick
                     id={`flexCheckDefault${id}`} // Use a unique ID for each checkbox
                 />
