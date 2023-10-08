@@ -25,6 +25,7 @@ function App() {
   };
 
   const [filter, setFilter] = useState('All'); // State to track the active filter
+  const [newTodo, setNewTodo] = useState('');
 
   // Function to handle filter change
   const handleFilterChange = (newFilter) => {
@@ -42,14 +43,47 @@ function App() {
     }
   });
 
+  const handleNewTodoChange = (event) => {
+    setNewTodo(event.target.value); // Update the newTodo state with input value
+  };
+
+  const handleAddTodo = (event) => {
+    event.preventDefault(); // Prevent form submission from reloading the page
+
+    if (newTodo.trim() !== '') {
+      // Add the new todo to the list if it's not empty
+      setTodo([
+        ...todo,
+        {
+          id: Math.random().toString(),
+          task: newTodo,
+          is_completed: false,
+        },
+      ]);
+      setNewTodo(''); // Clear the input field after adding
+    }
+  };
+
   return (
     <div className="min-vh-100 py-5 gradient-custom">
       <section className="container bg-white p-5 rounded">
-        <form class="d-flex justify-content-center align-items-center mb-5">
-          <div class="form-outline flex-fill">
-            <input type="text" id="form2" class="form-control" placeholder="New Task..." />
+        <form
+          className="d-flex justify-content-center align-items-center mb-5"
+          onSubmit={handleAddTodo} // Handle form submission
+        >
+          <div className="form-outline flex-fill">
+            <input
+              type="text"
+              id="form2"
+              className="form-control"
+              placeholder="New Task..."
+              value={newTodo} // Bind input value to the newTodo state
+              onChange={handleNewTodoChange} // Handle input change
+            />
           </div>
-          <button type="submit" class="btn btn-info ms-2">Add</button>
+          <button type="submit" className="btn btn-info ms-2">
+            Add
+          </button>
         </form>
 
         <ul className="nav nav-pills mb-4">
