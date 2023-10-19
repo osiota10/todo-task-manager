@@ -58,7 +58,7 @@ Before you begin, ensure you have met the following requirements:
 
 1. Start the development server:
 
-   ```sh
+   ```
    npm start
    ```
 
