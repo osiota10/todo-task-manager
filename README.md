@@ -3,7 +3,7 @@
 
 ## Overview
 
-This is a simple web application built with React for managing tasks. It allows users to create, track, and manage tasks efficiently. The application provides features such as task creation, task completion, task deletion, and task filtering...
+This is a simple web application built with React for managing tasks. It allows users to create, track, and manage tasks efficiently. The application provides features such as task creation, task completion, task deletion, and task filtering.
 
 ## Table of Contents
 
